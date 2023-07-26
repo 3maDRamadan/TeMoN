@@ -476,7 +476,7 @@ nav a:hover {
 
 @media(max-width:420px) {
   nav {
-    height: 940px;
+   height: 550px;
     padding-top: 0;
     justify-content: center;
   }
