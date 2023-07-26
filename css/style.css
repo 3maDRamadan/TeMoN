@@ -191,7 +191,7 @@ nav {
   background-image: linear-gradient(45deg, #061c5482, var(--alt-bg));
   display: flex;
   flex-direction: column;
-  padding-top: 160px;
+  padding-top: 60px;
   /* justify-content: center; */
   transition: .5s;
   transform: translateY(-200%);
@@ -266,6 +266,7 @@ nav a:hover {
   background-color: #061c54;
   position: relative;
   height: 100vh;
+  z-index: 1000;
 }
 
 .land::before {
@@ -538,7 +539,6 @@ nav a:hover {
   background-image: linear-gradient(45deg, var(--main-color), #9244f0);
   display: flex;
   align-items: center;
-  height: 329px;
   overflow: hidden;
   margin-top: 70px;
   border-radius: 10px;
@@ -673,12 +673,14 @@ nav a:hover {
 .skills .details {
   flex: 1;
 }
+
 @media (max-width:480px) {
-  .skills .details .sk{
+  .skills .details .sk {
     display: inline-block;
     margin-bottom: 22px;
   }
 }
+
 .skills .details .progress {
   height: 4px;
   margin-top: 15px;
@@ -904,8 +906,11 @@ nav a:hover {
 /* End Services */
 /* start Portfolio */
 .port {
-  background-color: var(--main-bg);
-  position: relative;
+    background-color: var(--main-bg);
+    position: relative;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
 }
 
 .port::before {
@@ -954,6 +959,14 @@ nav a:hover {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   padding: 30px 0;
+  /* align-items: center; */
+}
+
+@media (max-width:480px) {
+  .port .content .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  }
 }
 
 .port .content .gallery img {
@@ -975,6 +988,7 @@ nav a:hover {
   padding-top: 50px;
   background-color: var(--main-bg);
 }
+
 .contact::before {
   content: '';
   position: absolute;
@@ -986,6 +1000,7 @@ nav a:hover {
   right: -217px;
   filter: blur(100px);
 }
+
 .contact .content {
   margin: 70px 0;
 }
@@ -1078,7 +1093,12 @@ nav a:hover {
   padding: 30px 0;
 
 }
-
+@media (max-width:480px) {
+  .get{
+    flex-direction: column;
+  }
+  
+}
 
 .get .left label {
   display: block;
@@ -1098,42 +1118,65 @@ nav a:hover {
   background-color: transparent;
   border-bottom: 1px solid white;
   color: white;
+  transition: .5s;
 }
-.get .left input::placeholder{
+
+.get .left input:focus {
+  background-color: white;
+}
+
+.get .left input::placeholder {
   color: var(--grey-color);
 }
-.get .left input[type = "text"]{
+
+.get .left input[type="text"] {
   height: 100px;
 }
-.get .left input[type = "submit"]{
-display: block;
-margin-top: 20px;
-background-color: var(--main-bg);
-color: white;
-border: none;
-width: 100%;
-border-radius: 20px;
-font-weight: bold;
-font-size:17px;
-letter-spacing: 1.8px;
-background-image: linear-gradient(45deg, var(--main-color), #9244f0);
-cursor: pointer;
+
+.get .left input[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  background-color: var(--main-bg);
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: 1.8px;
+  background-image: linear-gradient(45deg, var(--main-color), #9244f0);
+  cursor: pointer;
 }
-.get .right{
+
+.get .right {
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.get .right h2{
+@media (max-width:480px) {
+  .get .right{
+    width: 100%;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: inherit;
+    margin: 30px;
+}
+  }
+
+.get .right h2 {
   margin-bottom: 20px;
 }
-.get .right .secP{
+
+.get .right .secP {
   font-size: 14px;
   font-weight: normal;
   color: var(--grey-color);
 }
+
 /* end contact */
 .up.show {
   right: 20px;
@@ -1165,21 +1208,25 @@ cursor: pointer;
   transform: translateY(-50%);
   animation: up .3s ease-in-out infinite alternate;
 }
-.foot{
+
+.foot {
   height: 100px;
   background-color: var(--alt-bg);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.foot h5{
+
+.foot h5 {
   font-weight: bold;
 }
-.foot span{
+
+.foot span {
   background-image: linear-gradient(45deg, var(--main-color), #9244f0);
   padding: 5px 10px;
   border-radius: 8px;
 }
+
 @keyframes up {
   from {
     top: 50%;
