@@ -96,7 +96,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   animation: rotateH .5s ease-in-out infinite alternate;
-
+  box-shadow: 0 90px 17px var(--blue-alt-color);
 }
 
 @keyframes rotateH {
@@ -185,13 +185,14 @@ nav {
   left: 0;
   top: 0;
   width: 100%;
-  height: 500px;
+  height: 100vh;
   /* background-color: var(--main-color); */
   /* background-image: linear-gradient(45deg, #4937f0, #9244f0); */
   background-image: linear-gradient(45deg, #061c5482, var(--alt-bg));
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
   /* justify-content: center; */
   transition: .5s;
   transform: translateY(-200%);
@@ -476,9 +477,8 @@ nav a:hover {
 
 @media(max-width:420px) {
   nav {
-   height: 500px;
-    padding-top: 60px;
-    justify-content: center;
+    height: 100vh;
+    padding-top: 0;
   }
 
   nav a {
@@ -837,31 +837,24 @@ nav a:hover {
   justify-content: center;
   padding: 15px 15px 30px;
   /* background-color: #ffffff42; */
-  overflow: hidden;
   border-radius: 8px;
-}
-
-.serv .content .box:hover {
-  /* background-image: linear-gradient( -45deg, #4937f087, #9244f0db); */
+  position: relative;
+  margin-top: 40px;
   background-image: linear-gradient(45deg, var(--main-color), #9244f0);
 }
 
-.serv .content .box:hover .vid {
-  /* box-shadow: 0 0 0 500px var(--main-color); */
-  /* background-color: var(--main-color); */
-  /* background-image: linear-gradient( -45deg, #4937f000, #9144f000); */
-  background-color: transparent;
-}
-
-.serv .content .box:hover h3 {
+.serv .content .box h3 {
   color: white;
+  margin: 15px 0;
+
 }
 
 .serv .content .box .vid {
   width: 50px;
   height: 50px;
   transition: .6s;
-
+  position: absolute;
+  top: -24px;
 }
 
 .serv .content .box .vid video {
@@ -876,11 +869,6 @@ nav a:hover {
 
 }
 
-.serv .content .box h3 {
-  margin: 15px 0;
-  color: var(--main-color);
-  transition: .6s;
-}
 
 .serv .content .box p {
   line-height: 1.8;
@@ -906,11 +894,11 @@ nav a:hover {
 /* End Services */
 /* start Portfolio */
 .port {
-    background-color: var(--main-bg);
-    position: relative;
-    /* text-align: center; */
-    display: flex;
-    flex-direction: column;
+  background-color: var(--main-bg);
+  position: relative;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
 }
 
 .port::before {
@@ -1093,11 +1081,12 @@ nav a:hover {
   padding: 30px 0;
 
 }
+
 @media (max-width:480px) {
-  .get{
+  .get {
     flex-direction: column;
   }
-  
+
 }
 
 .get .left label {
@@ -1155,8 +1144,9 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 }
+
 @media (max-width:480px) {
-  .get .right{
+  .get .right {
     width: 100%;
     /* display: flex; */
     flex-direction: column;
@@ -1164,8 +1154,8 @@ nav a:hover {
     justify-content: center;
     display: inherit;
     margin: 30px;
-}
   }
+}
 
 .get .right h2 {
   margin-bottom: 20px;
