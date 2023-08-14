@@ -1,18 +1,15 @@
-// //  Scroll To Top
-// let btnUp = document.querySelector(".up");
-// window.onscroll = function () {
-//   if (window.scrollY >= 600) {
-//     btnUp.style.display = "block";
-//   } else btnUp.style.display = "none";
-// };
-// btnUp.onclick = function () {
-//   win.scrollTo({
-//     top: 0,
-//     left: 0,
-//     behavior: "smooth",
-//   });
-// };
+// Disable Right Click
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+
+  window.alert(
+    "Sorry, right click is disabled to prevent leakage of 			confidential functions"
+  );
+});
+
 //-------------------------------
+//  Scroll To Top
+
 let span = document.querySelector(".up");
 
 window.onscroll = function () {
@@ -60,33 +57,7 @@ window.onscroll = function () {
     });
   }
 };
-//-----------------------------switcher
-// let switcherLis = document.querySelectorAll(".switcher li");
-// let imgs = Array.from(document.images);
-
-// switcherLis.forEach((li) => {
-//   li.addEventListener("click", removeActive);
-//   li.addEventListener("click", manageImgs);
-// });
-
-//Remove Active Class From All Lis And Add To Current
-// function removeActive() {
-//   switcherLis.forEach((li) => {
-//     li.classList.remove("active");
-//     this.classList.add("active");
-//   });
-// }
-
-// // Manage Imgs
-// function manageImgs() {
-//   imgs.forEach((img) => {
-//     img.style.display = "none";
-//   });
-//   document.querySelectorAll(this.dataset.cat).forEach((el) => {
-//     el.style.display = "block";
-//   });
-// }
-//---------------------------------------------
+//Switcher
 let switcherLis = document.querySelectorAll(".switcher li");
 // let imgs = Array.from(document.images);
 let imgs = document.querySelectorAll(".gallery img");
